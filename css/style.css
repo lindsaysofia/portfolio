@@ -473,3 +473,20 @@ social-list__item {
 .social-list__link {
   padding: .5em;
 }
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
