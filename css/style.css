@@ -42,6 +42,11 @@
 }
 
 /* General Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--clr-light);
   color: var(--clr-dark);
@@ -181,11 +186,6 @@ header {
   color: var(--clr-accent);
 }
 
-.hamburger {
-  display: block;
-  position: relative;
-}
-
 .nav-toggle {
   padding: .5em;
   background: transparent;
@@ -195,6 +195,38 @@ header {
   right: 1em;
   top: 1em;
   z-index: 1000;
+}
+
+.nav-open .nav {
+  transform: translateX(0);
+}
+
+.nav-open .hamburger,
+.nav-open .hamburger::before,
+.nav-open .hamburger::after {
+  background-color: var(--clr-accent);
+}
+
+.nav-open .hamburger {
+  transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+/* We want the hamburger to be fixed if the nav is on */
+.nav-open .nav-toggle {
+  position: fixed
+}
+
+.hamburger {
+  display: block;
+  position: relative;
 }
 
 .hamburger,
